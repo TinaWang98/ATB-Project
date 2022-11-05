@@ -4,7 +4,6 @@ package prime;
 import java.util.*;
 
 public class PrimeGenerators {
-
     //sieve of Eratosthenes
     List<Integer> sieveOfEratosthenesFindPrimes(int n){
         List<Integer> list = new ArrayList<>();
@@ -48,5 +47,11 @@ public class PrimeGenerators {
                 return false;
         }
         return true;
+    }
+    public static void main(String[] args){
+        PrimeGenerators test = new PrimeGenerators();
+        List<Integer> list = test.sieveOfEratosthenesFindPrimes(5000000);
+        System.out.println(list.size());
+
     }
 }
