@@ -32,8 +32,8 @@ import org.openjdk.jmh.results.ScalarResult;
 import org.openjdk.jmh.results.AggregationPolicy;
 import org.openjdk.jmh.runner.FailureAssistException;
 
-import benchmark.jmh_generated.BenchmarkApp_jmhType;
-public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
+import benchmark.jmh_generated.JMHBenchmarkApp_jmhType;
+public final class JMHBenchmarkApp_testSieveOfEratosthenesFindPrimes_jmhTest {
 
     byte p000, p001, p002, p003, p004, p005, p006, p007, p008, p009, p010, p011, p012, p013, p014, p015;
     byte p016, p017, p018, p019, p020, p021, p022, p023, p024, p025, p026, p027, p028, p029, p030, p031;
@@ -58,7 +58,7 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
     Blackhole blackhole;
     Control notifyControl;
 
-    public BenchmarkTaskResult testBruteForceFindPrimes_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult testSieveOfEratosthenesFindPrimes_Throughput(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -68,24 +68,24 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
         }
         if (threadParams.getSubgroupIndex() == 0) {
             RawResults res = new RawResults();
-            BenchmarkApp_jmhType l_benchmarkapp0_0 = _jmh_tryInit_f_benchmarkapp0_0(control);
+            JMHBenchmarkApp_jmhType l_jmhbenchmarkapp0_G = _jmh_tryInit_f_jmhbenchmarkapp0_G(control);
 
             control.preSetup();
 
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_benchmarkapp0_0.testBruteForceFindPrimes();
+                blackhole.consume(l_jmhbenchmarkapp0_G.testSieveOfEratosthenesFindPrimes());
                 res.allOps++;
             }
 
             notifyControl.startMeasurement = true;
-            testBruteForceFindPrimes_thrpt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_benchmarkapp0_0);
+            testSieveOfEratosthenesFindPrimes_thrpt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_jmhbenchmarkapp0_G);
             notifyControl.stopMeasurement = true;
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_benchmarkapp0_0.testBruteForceFindPrimes();
+                    blackhole.consume(l_jmhbenchmarkapp0_G.testSieveOfEratosthenesFindPrimes());
                     res.allOps++;
                 }
             } catch (Throwable e) {
@@ -94,7 +94,9 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
             control.preTearDown();
 
             if (control.isLastIteration()) {
-                f_benchmarkapp0_0 = null;
+                synchronized(this.getClass()) {
+                    f_jmhbenchmarkapp0_G = null;
+                }
             }
             res.allOps += res.measuredOps;
             int batchSize = iterationParams.getBatchSize();
@@ -104,19 +106,19 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
             res.measuredOps *= opsPerInv;
             res.measuredOps /= batchSize;
             BenchmarkTaskResult results = new BenchmarkTaskResult((long)res.allOps, (long)res.measuredOps);
-            results.add(new ThroughputResult(ResultRole.PRIMARY, "testBruteForceFindPrimes", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
+            results.add(new ThroughputResult(ResultRole.PRIMARY, "testSieveOfEratosthenesFindPrimes", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void testBruteForceFindPrimes_thrpt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, BenchmarkApp_jmhType l_benchmarkapp0_0) throws Throwable {
+    public static void testSieveOfEratosthenesFindPrimes_thrpt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, JMHBenchmarkApp_jmhType l_jmhbenchmarkapp0_G) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            l_benchmarkapp0_0.testBruteForceFindPrimes();
+            blackhole.consume(l_jmhbenchmarkapp0_G.testSieveOfEratosthenesFindPrimes());
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -125,7 +127,7 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
     }
 
 
-    public BenchmarkTaskResult testBruteForceFindPrimes_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult testSieveOfEratosthenesFindPrimes_AverageTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -135,24 +137,24 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
         }
         if (threadParams.getSubgroupIndex() == 0) {
             RawResults res = new RawResults();
-            BenchmarkApp_jmhType l_benchmarkapp0_0 = _jmh_tryInit_f_benchmarkapp0_0(control);
+            JMHBenchmarkApp_jmhType l_jmhbenchmarkapp0_G = _jmh_tryInit_f_jmhbenchmarkapp0_G(control);
 
             control.preSetup();
 
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_benchmarkapp0_0.testBruteForceFindPrimes();
+                blackhole.consume(l_jmhbenchmarkapp0_G.testSieveOfEratosthenesFindPrimes());
                 res.allOps++;
             }
 
             notifyControl.startMeasurement = true;
-            testBruteForceFindPrimes_avgt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_benchmarkapp0_0);
+            testSieveOfEratosthenesFindPrimes_avgt_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, l_jmhbenchmarkapp0_G);
             notifyControl.stopMeasurement = true;
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_benchmarkapp0_0.testBruteForceFindPrimes();
+                    blackhole.consume(l_jmhbenchmarkapp0_G.testSieveOfEratosthenesFindPrimes());
                     res.allOps++;
                 }
             } catch (Throwable e) {
@@ -161,7 +163,9 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
             control.preTearDown();
 
             if (control.isLastIteration()) {
-                f_benchmarkapp0_0 = null;
+                synchronized(this.getClass()) {
+                    f_jmhbenchmarkapp0_G = null;
+                }
             }
             res.allOps += res.measuredOps;
             int batchSize = iterationParams.getBatchSize();
@@ -171,19 +175,19 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
             res.measuredOps *= opsPerInv;
             res.measuredOps /= batchSize;
             BenchmarkTaskResult results = new BenchmarkTaskResult((long)res.allOps, (long)res.measuredOps);
-            results.add(new AverageTimeResult(ResultRole.PRIMARY, "testBruteForceFindPrimes", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
+            results.add(new AverageTimeResult(ResultRole.PRIMARY, "testSieveOfEratosthenesFindPrimes", res.measuredOps, res.getTime(), benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void testBruteForceFindPrimes_avgt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, BenchmarkApp_jmhType l_benchmarkapp0_0) throws Throwable {
+    public static void testSieveOfEratosthenesFindPrimes_avgt_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, JMHBenchmarkApp_jmhType l_jmhbenchmarkapp0_G) throws Throwable {
         long operations = 0;
         long realTime = 0;
         result.startTime = System.nanoTime();
         do {
-            l_benchmarkapp0_0.testBruteForceFindPrimes();
+            blackhole.consume(l_jmhbenchmarkapp0_G.testSieveOfEratosthenesFindPrimes());
             operations++;
         } while(!control.isDone);
         result.stopTime = System.nanoTime();
@@ -192,7 +196,7 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
     }
 
 
-    public BenchmarkTaskResult testBruteForceFindPrimes_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult testSieveOfEratosthenesFindPrimes_SampleTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -202,14 +206,14 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
         }
         if (threadParams.getSubgroupIndex() == 0) {
             RawResults res = new RawResults();
-            BenchmarkApp_jmhType l_benchmarkapp0_0 = _jmh_tryInit_f_benchmarkapp0_0(control);
+            JMHBenchmarkApp_jmhType l_jmhbenchmarkapp0_G = _jmh_tryInit_f_jmhbenchmarkapp0_G(control);
 
             control.preSetup();
 
 
             control.announceWarmupReady();
             while (control.warmupShouldWait) {
-                l_benchmarkapp0_0.testBruteForceFindPrimes();
+                blackhole.consume(l_jmhbenchmarkapp0_G.testSieveOfEratosthenesFindPrimes());
                 res.allOps++;
             }
 
@@ -218,12 +222,12 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
             int batchSize = iterationParams.getBatchSize();
             int opsPerInv = benchmarkParams.getOpsPerInvocation();
             SampleBuffer buffer = new SampleBuffer();
-            testBruteForceFindPrimes_sample_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, buffer, targetSamples, opsPerInv, batchSize, l_benchmarkapp0_0);
+            testSieveOfEratosthenesFindPrimes_sample_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, buffer, targetSamples, opsPerInv, batchSize, l_jmhbenchmarkapp0_G);
             notifyControl.stopMeasurement = true;
             control.announceWarmdownReady();
             try {
                 while (control.warmdownShouldWait) {
-                    l_benchmarkapp0_0.testBruteForceFindPrimes();
+                    blackhole.consume(l_jmhbenchmarkapp0_G.testSieveOfEratosthenesFindPrimes());
                     res.allOps++;
                 }
             } catch (Throwable e) {
@@ -232,21 +236,23 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
             control.preTearDown();
 
             if (control.isLastIteration()) {
-                f_benchmarkapp0_0 = null;
+                synchronized(this.getClass()) {
+                    f_jmhbenchmarkapp0_G = null;
+                }
             }
             res.allOps += res.measuredOps * batchSize;
             res.allOps *= opsPerInv;
             res.allOps /= batchSize;
             res.measuredOps *= opsPerInv;
             BenchmarkTaskResult results = new BenchmarkTaskResult((long)res.allOps, (long)res.measuredOps);
-            results.add(new SampleTimeResult(ResultRole.PRIMARY, "testBruteForceFindPrimes", buffer, benchmarkParams.getTimeUnit()));
+            results.add(new SampleTimeResult(ResultRole.PRIMARY, "testSieveOfEratosthenesFindPrimes", buffer, benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void testBruteForceFindPrimes_sample_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, BenchmarkApp_jmhType l_benchmarkapp0_0) throws Throwable {
+    public static void testSieveOfEratosthenesFindPrimes_sample_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, SampleBuffer buffer, int targetSamples, long opsPerInv, int batchSize, JMHBenchmarkApp_jmhType l_jmhbenchmarkapp0_G) throws Throwable {
         long realTime = 0;
         long operations = 0;
         int rnd = (int)System.nanoTime();
@@ -261,7 +267,7 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
             }
             for (int b = 0; b < batchSize; b++) {
                 if (control.volatileSpoiler) return;
-                l_benchmarkapp0_0.testBruteForceFindPrimes();
+                blackhole.consume(l_jmhbenchmarkapp0_G.testSieveOfEratosthenesFindPrimes());
             }
             if (sample) {
                 buffer.add((System.nanoTime() - time) / opsPerInv);
@@ -279,7 +285,7 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
     }
 
 
-    public BenchmarkTaskResult testBruteForceFindPrimes_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
+    public BenchmarkTaskResult testSieveOfEratosthenesFindPrimes_SingleShotTime(InfraControl control, ThreadParams threadParams) throws Throwable {
         this.benchmarkParams = control.benchmarkParams;
         this.iterationParams = control.iterationParams;
         this.threadParams    = threadParams;
@@ -288,7 +294,7 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
             this.blackhole = new Blackhole("Today's password is swordfish. I understand instantiating Blackholes directly is dangerous.");
         }
         if (threadParams.getSubgroupIndex() == 0) {
-            BenchmarkApp_jmhType l_benchmarkapp0_0 = _jmh_tryInit_f_benchmarkapp0_0(control);
+            JMHBenchmarkApp_jmhType l_jmhbenchmarkapp0_G = _jmh_tryInit_f_jmhbenchmarkapp0_G(control);
 
             control.preSetup();
 
@@ -296,46 +302,61 @@ public final class BenchmarkApp_testBruteForceFindPrimes_jmhTest {
             notifyControl.startMeasurement = true;
             RawResults res = new RawResults();
             int batchSize = iterationParams.getBatchSize();
-            testBruteForceFindPrimes_ss_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, batchSize, l_benchmarkapp0_0);
+            testSieveOfEratosthenesFindPrimes_ss_jmhStub(control, res, benchmarkParams, iterationParams, threadParams, blackhole, notifyControl, startRndMask, batchSize, l_jmhbenchmarkapp0_G);
             control.preTearDown();
 
             if (control.isLastIteration()) {
-                f_benchmarkapp0_0 = null;
+                synchronized(this.getClass()) {
+                    f_jmhbenchmarkapp0_G = null;
+                }
             }
             int opsPerInv = control.benchmarkParams.getOpsPerInvocation();
             long totalOps = opsPerInv;
             BenchmarkTaskResult results = new BenchmarkTaskResult(totalOps, totalOps);
-            results.add(new SingleShotResult(ResultRole.PRIMARY, "testBruteForceFindPrimes", res.getTime(), totalOps, benchmarkParams.getTimeUnit()));
+            results.add(new SingleShotResult(ResultRole.PRIMARY, "testSieveOfEratosthenesFindPrimes", res.getTime(), totalOps, benchmarkParams.getTimeUnit()));
             this.blackhole.evaporate("Yes, I am Stephen Hawking, and know a thing or two about black holes.");
             return results;
         } else
             throw new IllegalStateException("Harness failed to distribute threads among groups properly");
     }
 
-    public static void testBruteForceFindPrimes_ss_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, int batchSize, BenchmarkApp_jmhType l_benchmarkapp0_0) throws Throwable {
+    public static void testSieveOfEratosthenesFindPrimes_ss_jmhStub(InfraControl control, RawResults result, BenchmarkParams benchmarkParams, IterationParams iterationParams, ThreadParams threadParams, Blackhole blackhole, Control notifyControl, int startRndMask, int batchSize, JMHBenchmarkApp_jmhType l_jmhbenchmarkapp0_G) throws Throwable {
         long realTime = 0;
         result.startTime = System.nanoTime();
         for (int b = 0; b < batchSize; b++) {
             if (control.volatileSpoiler) return;
-            l_benchmarkapp0_0.testBruteForceFindPrimes();
+            blackhole.consume(l_jmhbenchmarkapp0_G.testSieveOfEratosthenesFindPrimes());
         }
         result.stopTime = System.nanoTime();
         result.realTime = realTime;
     }
 
     
-    BenchmarkApp_jmhType f_benchmarkapp0_0;
+    static volatile JMHBenchmarkApp_jmhType f_jmhbenchmarkapp0_G;
     
-    BenchmarkApp_jmhType _jmh_tryInit_f_benchmarkapp0_0(InfraControl control) throws Throwable {
-        if (control.isFailing) throw new FailureAssistException();
-        BenchmarkApp_jmhType val = f_benchmarkapp0_0;
-        if (val == null) {
-            val = new BenchmarkApp_jmhType();
-                Field f;
-                f = benchmark.BenchmarkApp.class.getDeclaredField("n");
-                f.setAccessible(true);
-                f.set(val, Integer.valueOf(control.getParam("n")));
-            f_benchmarkapp0_0 = val;
+    JMHBenchmarkApp_jmhType _jmh_tryInit_f_jmhbenchmarkapp0_G(InfraControl control) throws Throwable {
+        JMHBenchmarkApp_jmhType val = f_jmhbenchmarkapp0_G;
+        if (val != null) {
+            return val;
+        }
+        synchronized(this.getClass()) {
+            try {
+            if (control.isFailing) throw new FailureAssistException();
+            val = f_jmhbenchmarkapp0_G;
+            if (val != null) {
+                return val;
+            }
+            val = new JMHBenchmarkApp_jmhType();
+            Field f;
+            f = benchmark.JMHBenchmarkApp.class.getDeclaredField("n");
+            f.setAccessible(true);
+            f.set(val, Integer.valueOf(control.getParam("n")));
+            val.readyTrial = true;
+            f_jmhbenchmarkapp0_G = val;
+            } catch (Throwable t) {
+                control.isFailing = true;
+                throw t;
+            }
         }
         return val;
     }
