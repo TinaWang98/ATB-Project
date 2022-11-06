@@ -1,12 +1,13 @@
 //generate list containing prime numbers smaller or equal to n
 //using brute force method or sieve of Eratosthenes
 package prime;
+
 import java.util.*;
 
 public class PrimeGenerators {
     //sieve of Eratosthenes
     public List<Integer> sieveOfEratosthenesFindPrimes(int n){
-        long startTime=System.nanoTime();
+        //long startTime=System.nanoTime();
         List<Integer> list = new ArrayList<>();
         //create a boolean array A of size n+1 with values set to True
         boolean[] A = new boolean[n+1];
@@ -26,22 +27,22 @@ public class PrimeGenerators {
                 list.add(i);
             }
         }
-        long endTime=System.nanoTime();
-        System.out.println("SieveOfEratosthenes runtime is "+(endTime-startTime)+" ns.");
+        //long endTime=System.nanoTime();
+        //System.out.println("SieveOfEratosthenes runtime is "+(endTime-startTime)+" ns.");
         return list;
     }
 
     //Brute force
     public List<Integer> bruteForceFindPrimes(int n) {
-        long startTime=System.nanoTime();
+        //long startTime=System.nanoTime();
         List<Integer> list = new ArrayList<>();
         for(int i = 2; i <= n; i++){
             if(isPrime(i)){
                 list.add(i);
             }
         }
-        long endTime=System.nanoTime();
-        System.out.println("BruteForce runtime is "+(endTime-startTime)+" ns.");
+        //long endTime=System.nanoTime();
+        //System.out.println("BruteForce runtime is "+(endTime-startTime)+" ns.");
         return list;
     }
 
@@ -54,10 +55,5 @@ public class PrimeGenerators {
         }
         return true;
     }
-    public static void main(String[] args){
-        PrimeGenerators test = new PrimeGenerators();
-        List<Integer> list = test.sieveOfEratosthenesFindPrimes(5000000);
-        System.out.println(list.size());
 
-    }
 }

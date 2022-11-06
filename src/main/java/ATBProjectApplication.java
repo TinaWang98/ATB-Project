@@ -1,3 +1,5 @@
+import benchmark.BenchmarkApp;
+
 /**
  * Starter class for prime generater application
  * @author tina
@@ -10,7 +12,6 @@ public class ATBProjectApplication {
      * @param args application command line arguments
      */
     public static void main(String[] args){
-        BenchmarkApp app = new BenchmarkApp();
-        app.run();
+        BenchmarkApp.run();
     }
 }

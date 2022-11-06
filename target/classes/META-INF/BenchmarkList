@@ -1,0 +1,2 @@
+JMH S 22 benchmark.BenchmarkApp S 69 benchmark.jmh_generated.BenchmarkApp_testBruteForceFindPrimes_jmhTest S 24 testBruteForceFindPrimes S 11 AverageTime E A 1 1 1 E I 1 5 T 3 1 s E I 1 5 T 3 1 s E I 1 1 E E E E E M 1 1 n 1 8 xAA===== U 11 NANOSECONDS E E 
+JMH S 22 benchmark.BenchmarkApp S 78 benchmark.jmh_generated.BenchmarkApp_testSieveOfEratosthenesFindPrimes_jmhTest S 33 testSieveOfEratosthenesFindPrimes S 11 AverageTime E A 1 1 1 E I 1 5 T 3 1 s E I 1 5 T 3 1 s E I 1 1 E E E E E M 1 1 n 1 8 xAA===== U 11 NANOSECONDS E E 
