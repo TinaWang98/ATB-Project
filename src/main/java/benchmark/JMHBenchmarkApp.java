@@ -32,7 +32,7 @@ public class JMHBenchmarkApp {
     private int n;
     public void run(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("Welcome to PrimeGeneratorsApp!");
+        System.out.println("Welcome to JMHBenchmarkApp!");
         System.out.println("Please input n: ");
 
         while(!scan.hasNextInt()) {
@@ -47,7 +47,6 @@ public class JMHBenchmarkApp {
         PrimeGenerators app = new PrimeGenerators();
         return app.sieveOfEratosthenesFindPrimes(n);
     }
-
 
     @Benchmark
     public List<Integer> testBruteForceFindPrimes(){
@@ -65,6 +64,4 @@ public class JMHBenchmarkApp {
 
         new Runner(opt).run();
     }
-
-
 }

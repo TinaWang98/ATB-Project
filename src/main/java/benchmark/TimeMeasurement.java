@@ -10,5 +10,4 @@ public class TimeMeasurement {
         long endTime = System.nanoTime();
         return endTime-startTime;
     }
-
 }

@@ -28,7 +28,7 @@ public class PrimeGeneratorsBenchmark {
     }
     public void run(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("# Welcome to PrimeGeneratorsApp!");
+        System.out.println("# Welcome to PrimeGeneratorsBenchmarkApp!");
         System.out.println("# Please input n: ");
 
         while(!scan.hasNextInt()) {

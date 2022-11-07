@@ -28,11 +28,6 @@ public class PrimeGeneratorsTest {
     }
 
     @Test
-    void execptionTestingIsPrime(){
-
-    }
-
-    @Test
     @DisplayName("Sieve Of Eratosthenes method should work")
     void testSieveOfEratosthenesFindPrimes(){
 
@@ -72,11 +67,6 @@ public class PrimeGeneratorsTest {
     }
 
     @Test
-    void execptionTestingSieveOfEratosthenesFindPrimes(){
-
-    }
-
-    @Test
     @DisplayName("Brute force method should work")
     void testBruteForceFindPrimes(){
         //Expected null list for negative numbers, 0 and 1
@@ -113,11 +103,4 @@ public class PrimeGeneratorsTest {
 //        assertEquals(testList_5000000.size(),348513);
 //        assertEquals(testList_5000000.get(testList_5000000.size()-1),4999999);
     }
-
-    @Test
-    void execptionTestingBruteForceFindPrimes(){
-
-    }
-
-
 }
