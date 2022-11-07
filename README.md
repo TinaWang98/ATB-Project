@@ -2,6 +2,8 @@
 
 This repo is for benchmarking the performance (execution time and used memory) of the two different algorithms that find primes less than or equal to a value n.  The programming language is Java.
 
+[TOC]
+
 ## Get started
 
 1. Clone this repository
@@ -98,9 +100,9 @@ If you want to get more thorough results, you could go to src/main/java/benchmar
 
 ## Follow-up Questions
 
-##### Is there any measurable difference between the two algorithms for small values of N?
+**1. Is there any measurable difference between the two algorithms for small values of N?**
 
-###### **Running time:**
+Running time:
 
 Brute force method time complexity: O(n^2)
 
@@ -108,7 +110,7 @@ Sieve of Eratosthenes method time complexity: O(n*log(logn))
 
 The brute force runs faster when N is small like 10. When N is within 100, the difference between the running times of the two algorithms is tiny.
 
-###### **Space:**
+Space:
 
 Brute force method space complexity: O(1)
 
@@ -116,13 +118,13 @@ Sieve of Eratosthenes method space complexity: O(n)
 
 When N is small, there is no significant difference in the space occupied by the two methods.
 
-##### Approximately at what value of N, if any, does the performance gap become significant?
+**2. Approximately at what value of N, if any, does the performance gap become significant?**
 
 When N is less than or equal to 100, the gap in execution time is tiny. When N is larger than 100, the gap is slightly significant. When N is over 1000, the gap is very significant. The Sieve of Eratosthenes method is faster.
 
 When N is very large, the Sieve of Eratosthenes method costs more memory than the brute force method.
 
-##### Do you think it was a good idea to benchmark the two algorithms in parallel? Why or why not?
+**3. Do you think it was a good idea to benchmark the two algorithms in parallel? Why or why not?**
 
 I think it's a good idea.
 
@@ -130,7 +132,7 @@ Parallel allows two benchmarks to be run simultaneously, saving running time. Th
 
 Parallel allows two benchmarks to be carried out independently, and the failure of one benchmark does not affect the other.
 
-##### In general, does it always make sense to use the algorithms with the best O(n) performance in our code? Describe some scenarios where it could make sense to choose a slower algorithm.
+**4. In general, does it always make sense to use the algorithms with the best O(n) performance in our code? Describe some scenarios where it could make sense to choose a slower algorithm.**
 
 Sometimes choosing a slower algorithm can perform better.
 
