@@ -1,5 +1,9 @@
 package benchmark;
-
+/**
+ * MemoryMeasurement Class is for getting the used memory of a method
+ *
+ * @author tina
+ */
 public class MemoryMeasurement {
     public interface MemoryMeasurementExecutor{
         void execute();
