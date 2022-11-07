@@ -1,15 +1,13 @@
 package benchmark;
 
 public class TimeMeasurement {
-    private long startTime;
-    private long endTime;
     public interface TimeMeasurementExecutor{
         void execute();
     }
     public long getTime(TimeMeasurementExecutor timeMeasurementExecutor){
-        startTime = System.nanoTime();
+        long startTime = System.nanoTime();
         timeMeasurementExecutor.execute();
-        endTime = System.nanoTime();
+        long endTime = System.nanoTime();
         return endTime-startTime;
     }
 

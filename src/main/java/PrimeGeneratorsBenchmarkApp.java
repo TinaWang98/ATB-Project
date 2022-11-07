@@ -10,7 +10,10 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Starter class for prime generater application
+ * PrimeGeneratorsBenchmarkApp is a simple console application that
+ * benchmarks the performance(execution time and used memory)
+ * of the Sieve Of Eratosthenes and Brute force method.
+ *
  * @author tina
  */
 
@@ -26,12 +29,16 @@ public class PrimeGeneratorsBenchmarkApp {
 
         ExecutorService threadPool = Executors.newFixedThreadPool(2);
         CountDownLatch countDownLatch = new CountDownLatch(2);
+
+        //benchmark brute force method
         threadPool.execute(new Runnable() {
             public void run() {
                 primeGeneratorsBenchmark.bruteForceBenchmark();
                 countDownLatch.countDown();
             }
         });
+
+        //benchmark sieve Of Eratosthenes method
         threadPool.execute(new Runnable() {
             public void run() {
                 primeGeneratorsBenchmark.sieveOfEratosthenesBenchmark();
@@ -47,6 +54,5 @@ public class PrimeGeneratorsBenchmarkApp {
             threadPool.shutdown();
             primeGeneratorsBenchmark.printReport();
         }
-
     }
 }
