@@ -48,6 +48,7 @@ public class JMHBenchmarkApp {
         return app.sieveOfEratosthenesFindPrimes(n);
     }
 
+
     @Benchmark
     public List<Integer> testBruteForceFindPrimes(){
         PrimeGenerators app = new PrimeGenerators();
