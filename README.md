@@ -20,7 +20,7 @@ This repo is for benchmarking the performance (execution time and used memory) o
 
 3. Run PrimeGeneratorsBenchmarkApp
 
-4. Input the value n in the command line. (Note: We recommend that n be within 100,000. When n exceeds 100,000, the brute force benchmarking results will take a long time.)
+4. Input the value n in the command line. (Note: n should be integer. We recommend that n be within 100,000. When n exceeds 100,000, the brute force benchmarking results will take a long time.)
 
    ```
    # Welcome to PrimeGeneratorsBenchmarkApp!

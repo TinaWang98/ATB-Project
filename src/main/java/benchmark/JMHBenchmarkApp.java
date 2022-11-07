@@ -32,11 +32,11 @@ public class JMHBenchmarkApp {
     private int n;
     public void run(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("Welcome to JMHBenchmarkApp!");
-        System.out.println("Please input n: ");
+        System.out.println("# Welcome to JMHBenchmarkApp!");
+        System.out.println("# Please input n: ");
 
         while(!scan.hasNextInt()) {
-            System.out.println("Please enter an integer:");
+            System.out.println("# Please enter an integer:");
             scan = new Scanner(System.in);
         }
         n = scan.nextInt();
@@ -59,7 +59,7 @@ public class JMHBenchmarkApp {
         jmhBenchmark.run();
         Options opt = new OptionsBuilder()
                 .include(JMHBenchmarkApp.class.getSimpleName())
-                .param("n", String.valueOf(jmhBenchmark.n)) // Use this to selectively constrain/override parameters
+                .param("n", String.valueOf(jmhBenchmark.n))
                 .build();
 
         new Runner(opt).run();

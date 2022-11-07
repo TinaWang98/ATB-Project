@@ -21,6 +21,7 @@ public class PrimeGeneratorsTest {
         assertEquals(false,primeGenerators.isPrime(1));
         assertEquals(true,primeGenerators.isPrime(2));
         assertEquals(true,primeGenerators.isPrime(7));
+        assertEquals(false,primeGenerators.isPrime(9));
         assertEquals(true,primeGenerators.isPrime(17));
         assertEquals(false,primeGenerators.isPrime(100));
         assertEquals(false,primeGenerators.isPrime(1020));
@@ -97,10 +98,5 @@ public class PrimeGeneratorsTest {
         for(int num:testList_100){
             assertEquals(true,primeGenerators.isPrime(num));
         }
-
-        //Expected prime numbers list for 5000000
-//        List<Integer> testList_5000000 = primeGenerators.bruteForceFindPrimes(5000000);
-//        assertEquals(testList_5000000.size(),348513);
-//        assertEquals(testList_5000000.get(testList_5000000.size()-1),4999999);
     }
 }

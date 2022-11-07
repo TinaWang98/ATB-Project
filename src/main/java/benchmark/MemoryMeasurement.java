@@ -8,7 +8,7 @@ public class MemoryMeasurement {
     public interface MemoryMeasurementExecutor{
         void execute();
     }
-    public long getMemory(MemoryMeasurement.MemoryMeasurementExecutor memoryMeasurementExecutor){
+    public long getMemory(MemoryMeasurementExecutor memoryMeasurementExecutor){
         Runtime runtime = Runtime.getRuntime();
         runtime.gc();
         long beforeUsedMem = runtime.totalMemory()-runtime.freeMemory();

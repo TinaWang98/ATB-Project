@@ -1,4 +1,11 @@
 package benchmark;
+/**
+ * PrimeGeneratorsBenchmark is a class that defines the CLI,
+ * develops the benchmark method of Sieve of Eratosthenes,
+ * develops the benchmark method of brute force method and develops the printReport method.
+ *
+ * @author tina
+ */
 
 import org.openjdk.jmh.annotations.Measurement;
 import prime.PrimeGenerators;
@@ -7,7 +14,7 @@ import java.util.Optional;
 import java.util.Scanner;
 
 public class PrimeGeneratorsBenchmark {
-    public int n;
+    private int n;
     private long timeSieveOfEratosthenes;
     private long timeBruteForce;
     private long usedMemSieveOfEratosthenes;
@@ -16,7 +23,7 @@ public class PrimeGeneratorsBenchmark {
     private MemoryMeasurement memoryMeasurement;
     private PrimeGenerators primeGenerators;
 
-    public PrimeGeneratorsBenchmark () {
+    public PrimeGeneratorsBenchmark() {
         timeMeasurement = new TimeMeasurement();
         memoryMeasurement = new MemoryMeasurement();
         primeGenerators = new PrimeGenerators();
@@ -26,7 +33,7 @@ public class PrimeGeneratorsBenchmark {
         usedMemBruteForce = 0;
         usedMemSieveOfEratosthenes = 0;
     }
-    public void run(){
+    public void run() {
         Scanner scan = new Scanner(System.in);
         System.out.println("# Welcome to PrimeGeneratorsBenchmarkApp!");
         System.out.println("# Please input n: ");
@@ -36,10 +43,10 @@ public class PrimeGeneratorsBenchmark {
             scan = new Scanner(System.in);
         }
         n = scan.nextInt();
-        System.out.println("# Please wait!");
+        System.out.println("# Please wait...");
     }
 
-    public void sieveOfEratosthenesBenchmark(){
+    public void sieveOfEratosthenesBenchmark() {
         long eachTime = 0;
         long eachMemory = 0;
         for(int i = 1; i <= 10; i++){
@@ -67,10 +74,10 @@ public class PrimeGeneratorsBenchmark {
         }
     }
 
-    public void bruteForceBenchmark(){
+    public void bruteForceBenchmark() {
         long eachTime = 0;
         long eachMemory = 0;
-        for(int i = 1; i <= 10; i++){
+        for(int i = 1; i <= 10; i++) {
             eachTime = timeMeasurement.getTime(new TimeMeasurement.TimeMeasurementExecutor() {
                 @Override
                 public void execute() {
@@ -95,7 +102,7 @@ public class PrimeGeneratorsBenchmark {
         }
     }
 
-    public void printReport(){
+    public void printReport() {
         System.out.println();
         System.out.println("--------------Final Result-----------------");
         System.out.println("# Used memory of SieveOfEratosthenes: " + (double)usedMemSieveOfEratosthenes/5/1024 + "KB");
