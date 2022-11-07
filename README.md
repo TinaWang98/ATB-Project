@@ -2,7 +2,11 @@
 
 This repo is for benchmarking the performance (execution time and used memory) of the two different algorithms that find primes less than or equal to a value n.  The programming language is Java.
 
-[TOC]
+- [PrimeGeneratorsBenchmarkApp](#primegeneratorsbenchmarkapp)
+  - [Get started](#get-started)
+  - [Benchmarking Solution](#benchmarking-solution)
+  - [Source code review](#source-code-review)
+  - [Follow-up Questions](#follow-up-questions)
 
 ## Get started
 
